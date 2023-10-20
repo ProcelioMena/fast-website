@@ -52,4 +52,4 @@ if __name__ == "__main__":
     if ENV == "test":
         uvicorn.run(f"{Path(__file__).stem}:app", host="0.0.0.0", port=8080, reload=True, log_level="info")
     else:
-        uvicorn.run(app, host="0.0.0.0", port="8080")
+        uvicorn.run(app, host="0.0.0.0", port=8080)
