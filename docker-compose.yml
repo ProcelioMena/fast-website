@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  api:
+    container_name: fast-api
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        ENV: test
+    environment:
+        AWS_ACCESS_KEY_ID: ${ACCESS_KEY}
+        AWS_SECRET_ACCESS_KEY: ${SECRET_KEY}
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app
+    platform: linux/x86_64
